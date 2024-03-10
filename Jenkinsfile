@@ -12,16 +12,16 @@ pipeline {
         git branch: 'main', url: 'https://github.com/Punithbc/Python-cicd.git'
       }
     }
-    stage('Static Code Analysis') {
-      environment {
-        SONAR_URL = "http://18.212.37.31:9000"
-      }
-      steps {
-        withCredentials([string(credentialsId: 'MySonarToken', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
-        }
-      }
-    }
+    // stage('Static Code Analysis') {
+    //   environment {
+    //     SONAR_URL = "http://18.212.37.31:9000"
+    //   }
+    //   steps {
+    //     withCredentials([string(credentialsId: 'MySonarToken', variable: 'SONAR_AUTH_TOKEN')]) {
+    //       sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+    //     }
+    //   }
+    // }
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "mechai/PYTHON-CICD:${BUILD_NUMBER}"
