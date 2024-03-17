@@ -5,7 +5,7 @@ metadata:
   labels:
     app : app-deploy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: python-web-app
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: mypythonapp
-          image: mechai/pythoncicd
+          image: mechai/pythoncicd:replaceImageTag
           ports:
            - containerPort: 5000   
