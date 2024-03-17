@@ -28,7 +28,7 @@ pipeline {
       environment {
         DOCKER_IMAGE = "mechai/pythoncicd:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
-        REGISTRY_CREDENTIALS = credentials('docker_cred')
+        REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
       steps {
         script {
