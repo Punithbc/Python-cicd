@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: mypythonapp
-          image: mechai/pythoncicd:replaceImageTag
+          image: mechai/pythoncicd:14
           ports:
            - containerPort: 5000   
